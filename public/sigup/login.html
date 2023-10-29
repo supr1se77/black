@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/login.css">
+    <title>Login - Blackcorp</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="/login" method="POST"> <!-- Atualização aqui -->
+                    <h2>Login</h2>
+                    <!-- Adicione uma mensagem de erro -->
+                    <p id="error-message" style="color: red;"></p>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name="email" required> <!-- Adicione o atributo name para o campo de email -->
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password" required> <!-- Adicione o atributo name para o campo de senha -->
+                        <label for="password">Senha</label>
+                    </div>
+                    <button>Entrar</button>
+                    <div class="register">
+                        <p>Não tem uma conta? <a href="/public/sigup/registro.html">Registrar</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.querySelector('form');
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Evita o envio padrão do formulário
+    
+                const email = loginForm.querySelector('[name="email"]').value;
+                const password = loginForm.querySelector('[name="password"]').value;
+    
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email, password }),
+                    });
+    
+                    if (response.status === 200) {
+                        // Login bem-sucedido, redireciona para a página desejada
+                        window.location.href = './index.html'; // Substitua pela página desejada
+                    } else {
+                        // Exiba uma mensagem de erro no caso de credenciais inválidas
+                        const errorMessage = document.getElementById('error-message');
+                        errorMessage.textContent = 'Credenciais inválidas';
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

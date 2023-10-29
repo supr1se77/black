@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/barra.css">
+    <link rel="stylesheet" href="/src/css/carrosel.css">
+   
+    
+    <title>BlackCorp</title>
+    
+</head>
+
+<body>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <nav>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="/src/images/bk.png">
+            </a>
+        </div>
+    </nav>
+    <header class="header-container" style="background-image: url('/src/images/Design\ sem\ nome.png');">
+        <div class="header-content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h1 style="font-family: 'Arial', sans-serif; font-size: 3em; font-weight: bold;">Demonstração</h1>
+            <p style="margin-top: 10px; font-size: 1.5em; font-family: 'Arial', sans-serif;">Bem-vindo à nossa página de demonstração! Aprecie nosso conteúdo exclusivo.</p>
+        </div>
+        
+        <div class="arrow-down">
+            <i class="ri-arrow-down-s-fill animated"></i>
+        </div>
+    </header>
+    
+    
+    <div class="carousel">
+        <div class="arrow-left">
+            <i class="ri-arrow-left-s-line" onclick="prevVideo()"></i>
+        </div>
+        <div class="video-container" id="videoContainer">
+            <div class="video-frame" id="videoFrame1">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/96XV4fDVP08" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="arrow-right">
+            <i class="ri-arrow-right-s-line" onclick="nextVideo()"></i>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+
+
+ 
+    
+    <footer class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="logo">
+                <img src="/src/images/bk.png">
+            </div>
+            <p>
+              Redes Sociais
+            </p>
+            <div class="socials">
+                <a href="https://www.youtube.com/@blackcodeoficialXiter/featured"><i class="ri-youtube-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="https://discord.gg/5BShNRsfXN"><i class="ri-discord-line"></i></a>
+            </div>
+        </div>
+        </div>
+        <div class="column">
+            <h4>Empresa</h4>
+            <a href="#">Negócios</a>
+            <a href="#">Parceria</a>
+            <a href="#">Rede</a>
+        </div>
+        <div class="column">
+            <h4>Sobre Nós</h4>
+            <a href="#">Blogs</a>
+            <a href="#">Canais</a>
+            <a href="#">Patrocinadores</a>
+        </div>
+        <div class="column">
+            <h4>Contato</h4>
+            <a href="https://discord.gg/5BShNRsfXN">Fale Conosco</a>
+            <a href="/src/pages/politica.html">Política de Privacidade</a>
+            <a href="/src/pages/termos.html">Termos e Condições</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        Copyright © 2023 BlackCorp. Todos os direitos reservados.
+    </div>
+
+<script>let videos = [
+    "https://www.youtube.com/embed/96XV4fDVP08",
+    "https://www.youtube.com/embed/Iz3qVXTYf5M",
+    "https://www.youtube.com/embed/fWKoUN5CW3I"
+];
+let currentVideoIndex = 0;
+
+function prevVideo() {
+    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+    document.getElementById('videoFrame1').innerHTML = `<iframe width="800" height="450" src="${videos[currentVideoIndex]}" frameborder="0" allowfullscreen></iframe>`;
+}
+
+function nextVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    document.getElementById('videoFrame1').innerHTML = `<iframe width="800" height="450" src="${videos[currentVideoIndex]}" frameborder="0" allowfullscreen></iframe>`;
+}
+
+    
+    </script>
+   
+
+</body>
+
+</html>

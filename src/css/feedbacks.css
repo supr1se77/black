@@ -1,0 +1,58 @@
+
+/* Estilo para a seção de feedbacks */
+.feedbacks-section {
+    display: none; /* Inicialmente oculta a seção de feedbacks */
+    padding: 20px;
+    background-color: #4a4e5e; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilo para cada card de feedback */
+.feedback-card {
+    background-color: #4a4e5e; /* Cor de fundo do card */
+    border: 1px solid #555; /* Cor da borda */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a imagem do feedback */
+.feedback-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilo para o título do feedback */
+.feedback-card h3 {
+    font-size: 20px; /* Tamanho da fonte do título */
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o texto do feedback */
+.feedback-card p {
+    font-size: 16px; /* Tamanho da fonte do texto */
+    color: #ccc; /* Cor do texto */
+}
+
+/* Estilo para o botão "Detalhes" */
+.feedback-card .btn {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-card .btn:hover {
+    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilo para quando a seção de feedbacks estiver visível */
+.feedbacks-section.active {
+    display: block;
+}

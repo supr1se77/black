@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/loja.css">
+    <link rel="stylesheet" href="../css/barra.css">
+    <link rel="stylesheet" href="/src/css/product.css">
+ 
+    <title>Detalhes do Produto</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="../images/bk.png" alt="Logo da Loja">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="link"><a href="/index.html"><i class="fas fa-home"></i> Página Inicial</a></li>
+            <li id="link4" class="link"><a href="/src/pages/loja.html"><i class="fas fa-store"></i> Loja</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <div class="product-container">
+            <div class="product-image-container">
+                <img id="product-image" src="" alt="Imagem do Produto">
+            </div>
+            <div class="product-details">
+                <div class="product-name" id="product-name">Nome do Produto</div>
+                <button id="buy-button" onclick="redirectToPayment()">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const imagePath = urlParams.get('image');
+        const productName = urlParams.get('name');
+
+        // Atualizar a página com as informações do produto
+        document.getElementById("product-name").innerText = productName;
+        document.getElementById("product-image").setAttribute("src", imagePath);
+    </script>
+</body>
+
+</html>

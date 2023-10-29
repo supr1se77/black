@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/loja.css">
+    <link rel="stylesheet" href="../css/barra.css">
+
+    <title>BlackCorp - Cheats de Jogos</title>
+</head>
+<body style="background-image: url('/src/images/index.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
+    <nav>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="../images/bk.png" alt="Logo da Loja">
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar" class="search-box">
+            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li class="link">
+                <a href="/index.html">
+                    <i class="fas fa-home"></i> Página Inicial
+                </a>
+            </li>
+            <li class="link" id="link4">
+                <a href="#">
+                    <i class="fas fa-store"></i> Loja
+                </a>
+            </li>
+            <li class="link">
+                <a href="demonstraçao.html" onclick="demoFunction()">
+                    <i class="fas fa-info-circle"></i> Demonstração
+                </a>
+            </li>
+        </ul>
+        
+       
+    </nav>
+
+    <section class="container">
+        <!-- Lista de Cheats de Jogos -->
+        <div class="header-container">
+            <img src="/src/images/loja.png" alt="Descrição da imagem" class="header-image">
+            <h2 class="header">Valorant</h2>
+          
+        </div>
+        <div class="product-grid">
+            <!-- Cheat 1 -->
+            <div class="product-card">
+                <a href="#" onclick="showProduct(1, '../images/Cypher.jfif', 'ESP RADAR')">
+                    <img src="../images/Cypher.jfif" alt="Cheat 1">
+                    <h3>ESP RADAR</h3>
+                </a>
+            </div>
+            <!-- Cheat 2 -->
+            <div class="product-card">
+                <a href="#" onclick="showProduct(2, '../images/cheat2.png', 'VALORANT PAINEL EXTERNO')">
+                    <img src="../images/cheat2.png" alt="Cheat 2">
+                    <h3>VALORANT PAINEL EXTERNO</h3>
+                </a>
+            </div>
+            <!-- Adicione mais cheats conforme necessário -->
+        </div>
+    </section>
+    
+    
+
+    <script src="../js/ocultar.js"></script>
+    <script src="../js/checkout.js"></script>
+    <script src="/src/js/pesquisa.js"></script>
+    <script>
+        function showProduct(productId, imagePath, productName) {
+            window.location.href = `pagina_do_produto.html?id=${productId}&image=${imagePath}&name=${productName}`;
+        }
+    </script>
+    
+    
+</body>
+
+</html>

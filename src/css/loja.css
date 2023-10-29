@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #323232; /* Alterado para cinza */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Restante do seu código CSS permanece inalterado */
+
+nav {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0b0b0c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    opacity: 0; /* Inicialmente, torna a navegação invisível */
+    animation: slideIn 1s ease-in-out forwards; /* Adiciona animação de slide-in */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-logo {
+    max-width: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.link a {
+    color: #fff;
+    text-align: left;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0; /* Inicialmente, torna os links invisíveis */
+    animation: fadeIn 1s ease-in-out forwards; /* Adiciona animação de fade-in */
+}
+
+.container {
+    margin-left: 220px; /* Espaço para a barra de navegação */
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    opacity: 0; /* Inicialmente, torna o cabeçalho invisível */
+    animation: fadeIn 1s ease-in-out forwards; /* Adiciona animação de fade-in */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    opacity: 0; /* Inicialmente, torna a grade de produtos invisível */
+    animation: fadeIn 1s ease-in-out forwards; /* Adiciona animação de fade-in */
+}
+
+
+
+/* Outras regras CSS permanecem as mesmas */
+
+/* Outras regras CSS permanecem as mesmas */
+
+.product-card {
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid #6e3fc9;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card:hover {
+    background-color: #6e3fc9;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px; /* Defina a altura conforme necessário para o contêiner */
+    object-fit: cover; /* Adicionado para ajustar a imagem ao quadrado */
+    margin-bottom: 1rem;
+}
+
+
+
+.product-card h3 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+/* Botão de Comprar */
+.btn {
+    background-color: #6e3fc9;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #6e3fc9;
+    transform: scale(1.1);
+}
+
+.btn:hover::before {
+    height: 100%;
+}
+
+/* Animação de escurecimento suave para botões */
+.link a {
+    color: #fff;
+    text-align: left;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona a animação de escurecimento e sombra */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #8a4cf6;
+    border-radius: 8px; /* Arredonda as bordas */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+}
+
+.link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: all 0.3s ease;  
+}
+
+.link a:hover {
+    background-color: #6e3fc9; /* Cor de fundo ao passar o mouse */
+    transform: translateX(5px); /* Leve deslocamento ao passar o mouse */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+}
+
+.link a:hover::after {
+    width: 100%;
+    background-color: #fff;
+}
+
+.link a:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra desejada */
+}
+
+.link a {
+    color: #fff;
+    text-align: left;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0; /* Inicialmente, torna os links invisíveis */
+    animation: fadeIn 1s ease-in-out forwards; /* Adiciona animação de fade-in */
+    width: 100%; /* Define a largura do link como 100% */
+    box-sizing: border-box; /* Garante que o preenchimento esteja incluído na largura total */
+}
+
+.link i {
+    margin-right: 0.5rem; /* Ajuste o valor conforme necessário para o espaçamento do ícone */
+}
+
+/* Estilos para a barra de pesquisa */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #8a4cf6; /* Ajuste a cor da borda conforme necessário */
+    border-radius: 5px 0 0 5px;
+    width: 200px; /* Ajuste a largura da caixa de pesquisa conforme necessário */
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif; /* Ajuste a fonte conforme necessário */
+    background-color: #131313; /* Adiciona uma cor ao interior da caixa de pesquisa */
+}
+
+.search-box:focus {
+    width: 300px; /* Ajuste a largura expandida da caixa de pesquisa ao focar */
+}
+
+.search-button {
+    background-color: #6e3fc9;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif; /* Ajuste a fonte conforme necessário */
+}
+
+.search-button:hover {
+    background-color: #8a4cf6; /* Cor alterada ao passar o mouse */
+}
+
+/* Ajustes de aparência específicos para a barra de pesquisa */
+.search-container input[type="text"] {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Ajuste a fonte conforme necessário */
+}
+
+/* Restante do seu código CSS permanece o mesmo */
+
+.header-container {
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header-container img {
+    display: block;
+    margin: auto;
+}
+
+.product-card {
+    margin-bottom: 20px; /* Espaçamento entre os cartões de produto */
+}
+
+.product-card h3 {
+    margin-top: 10px; /* Espaçamento entre o título e a imagem */
+}
+
+.header-container img {
+    width: 100%;
+    max-height: 1100px; /* Ajuste a altura máxima conforme necessário */
+    display: block;
+    margin: auto;
+}
